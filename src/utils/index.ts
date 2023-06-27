@@ -65,10 +65,7 @@ export const customFormatDate = (UnixTime, fmt?: string) => {
   };
   let newDataStrin = fmt || 'yyyy-MM-dd hh:mm:ss.S';
   if (/(y+)/.test(newDataStrin)) {
-    newDataStrin = newDataStrin.replace(
-      RegExp.$1,
-      (dateTime.getFullYear() + '').substr(4 - RegExp.$1.length)
-    );
+    newDataStrin = newDataStrin.replace(RegExp.$1, (dateTime.getFullYear() + '').substr(4 - RegExp.$1.length));
   }
   for (let k in o) {
     if (new RegExp('(' + k + ')').test(newDataStrin)) {
